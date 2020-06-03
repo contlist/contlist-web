@@ -1,0 +1,47 @@
+/* === header === */
+
+.header {
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: calc(10px + 2vmin);  
+}
+  
+.header div {
+    display: flex;
+    align-items: center;
+}
+  
+.Contacts {
+    color: #5f6874;
+    margin: 0;
+    font-size: inherit;
+    font-weight: 400;
+}
+  
+.menu {
+    margin-right: 10px;
+}
+
+.contactsImg {
+    margin-right: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(71, 84, 202);
+    border-radius: 50%;
+}
+
+.login {
+    color: #5f6874;
+    padding: 2px 10px;
+    letter-spacing: .05rem;
+    font-size: calc(10px + 1vmin);
+    text-decoration: none;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+}
+
+.login:hover {
+
+}
+/* === /header === */
