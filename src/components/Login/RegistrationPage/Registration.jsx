@@ -1,18 +1,18 @@
 import React from 'react'
-import s from './Login.module.css'
-import { login } from '../../redux/auth-reducer'
+import s from './Registration.module.css'
+import { register } from '../../redux/auth-reducer'
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 
 
-const LoginForm = ({handleSubmit, error}) => {
+const RegistrationForm = ({handleSubmit, error}) => {
     return (
         <form onSubmit={handleSubmit} className={s.form}>
 
             <div className={s.header}>
                 <h1 className={s.Contacts}>Contacts</h1>
-                <h2 className={s.SignIn}>Sign in</h2>
+                <h2 className={s.SignIn}>Create your Account</h2>
             </div>
 
             <div className={s.inputs}>
@@ -23,26 +23,26 @@ const LoginForm = ({handleSubmit, error}) => {
             </div>
 
             <div className={s.links}>
-                <Link to={"/registration"} className={s.link}>Create account</Link>
-                <button className={s.link}>Log In</button>
+                <Link to={"/login"} className={s.link}>Cancel</Link>
+                <button className={s.link} onClick={() => <Redirect to={'/login'}></Redirect>}>Register</button>
             </div>
 
         </form>
     )
 }
 
-const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
+const RegistrationReduxForm = reduxForm({ form: 'registration' })(RegistrationForm)
 
-const Login = (props) => {
+const Registration = (props) => {
     const Submit = (formData) => {
-        props.login(formData.username, formData.password);
+        props.register(formData.username, formData.password);
     }
 
     if (props.isAuth) 
         return <Redirect to={"/contacts"} />
 
     return <div>
-        <LoginReduxForm onSubmit={Submit} />
+        <RegistrationReduxForm onSubmit={Submit} />
     </div>
 }
 
@@ -50,4 +50,4 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth
 })
 
-export default connect(mapStateToProps, {login})(Login)
+export default connect(mapStateToProps, {register})(Registration)

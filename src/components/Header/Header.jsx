@@ -1,6 +1,8 @@
 import React from 'react'
 import s from './Header.module.css'
 import menu from '../images/menu.svg'
+import { connect } from 'react-redux'
+import { logout } from '../redux/auth-reducer'
 
 const Header = (props) => {
     return (
@@ -12,12 +14,10 @@ const Header = (props) => {
             </div>
             <div>
                 <img alt=""/>
-                <a href="#" className={s.login} onClick={
-                    props.Auth.isAuthenticated = false
-                }>Logout</a>
+                <button className={s.login} onClick={() => props.logout()}>Logout</button>
             </div>
         </header>
-    );
+    )
 }
 
-export default Header
+export default connect(null, {logout})(Header)
