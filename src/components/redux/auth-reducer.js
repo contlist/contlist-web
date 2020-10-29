@@ -10,52 +10,52 @@ let initialState = {
 }
 
 const AuthReducer = (state= initialState, action) => {
-    switch(action.type) {
-        case SET_AUTH_USER_DATA :
-            return {
-                ...state,
-                ...action.payload
-            }
+	switch(action.type) {
+		case SET_AUTH_USER_DATA :
+			return {
+				...state,
+				...action.payload
+			}
 
-        case LOGOUT : 
-            return {
-                ...state,
-                initialState
-            }
+		case LOGOUT : 
+			return {
+				...state,
+				initialState
+			}
 
-        default:
-            return state
-    }
+		default:
+			return state
+	}
 }
 
 export const setAuthUserData = (username, token, isAuth) => ({
-    type: SET_AUTH_USER_DATA, payload: {username, token, isAuth} 
+	type: SET_AUTH_USER_DATA, payload: {username, token, isAuth} 
 })
 
 export const logoutAC = () => ({
-    type: LOGOUT
+	type: LOGOUT
 })
 
 export const login = (username, password) => {
-    return async(dispatch) => {
-        let response = await authApi.login(username, password)
+	return async(dispatch) => {
+		let response = await authApi.login(username, password)
 
-        if (response.status === 200) {
-            console.log(response.data)
-            dispatch(setAuthUserData(response.data.username, response.data.token, true))
-        }
-    }
+		if (response.status === 200) {
+			console.log(response.data)
+			dispatch(setAuthUserData(response.data.username, response.data.token, true))
+		}
+	}
 }
 
 export const register = (username, password) => {
-    return async(dispatch) => {
-        await registerAPI.register(username, password)
-        dispatch(login(username, password))
-    }
+	return async(dispatch) => {
+		await registerAPI.register(username, password)
+		dispatch(login(username, password))
+	}
 }
 
 export const logout = () => {
-    return initialState
+	return initialState
 } 
 
 

@@ -5,29 +5,29 @@ import {requestContacts, deleteContact} from '../redux/contacts-reducer'
 import Sidebar from '../Sidebar/Sidebar'
 import ContactList from '../ContactList/ContactList'
 import { Redirect } from 'react-router-dom'
-import s from './Main.module.css'
+import './Main.css'
 
 
 const Main = (props) => {
-    if (!props.isAuth) {
-        return <Redirect to={"/login"} />
-    }
-    
-    return (
-        <div>
-            <Header />
-            <div className={s.container}>
-                <Sidebar />
-                <ContactList />
-            </div>
-        </div>
-    );
+	if (!props.isAuth) {
+		return <Redirect to={"/login"} />
+	}
+	
+	return (
+		<div>
+			<Header />
+			<div className="app-container">
+				<Sidebar />
+				<ContactList />
+			</div>
+		</div>
+	);
 }
 
 const mapStateToProps = (state) => ({
-    contacts: state.contacts.contacts,
-    isAuth: state.auth.isAuth,
-    token: state.auth.token
+	contacts: state.contacts.contacts,
+	isAuth: state.auth.isAuth,
+	token: state.auth.token
 })
 
 export default connect(mapStateToProps, {requestContacts, deleteContact})(Main)
