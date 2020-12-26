@@ -6,9 +6,9 @@ import { reducer as formReducer } from 'redux-form'
 
 
 let reducers = combineReducers({
-    auth: AuthReducer,
-    contacts: ContactsReducer,
-    form: formReducer
+	auth: AuthReducer,
+	contacts: ContactsReducer,
+	form: formReducer
 })
 
 const store = createStore(reducers, applyMiddleware(thunk));

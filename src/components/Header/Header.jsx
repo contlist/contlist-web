@@ -1,24 +1,26 @@
 import React from 'react'
 import './Header.css'
 import menu from '../images/menu.svg'
+import contactsImg from '../images/contacts_ico.png'
 import { connect } from 'react-redux'
 import { logout } from '../redux/auth-reducer'
+import { sidebarModeAC } from '../redux/contacts-reducer'
 import ReactBar from './SearchBar/SearchBar'
 
 const Header = (props) => {
 	return (
 		<header className="header">
-			<div>
-				<img src={menu} className="menu" alt=""/>
-				<div className="contactsImg"></div>
+			<div className="header-content">
+				<img src={menu} className="menu" alt="" onClick={() => {props.sidebarModeAC()}} />
+				<img src={contactsImg} alt="" className="contactsImg"/>
 				<h1 className="Contacts">Contacts</h1>
 			</div>
 			<ReactBar />
-			<div>
-				<button className="logout" onClick={() => props.logout()}>Logout</button>
+			<div className="logout">
+				<button onClick={() => props.logout()}>Logout</button>
 			</div>
 		</header>
 	)
 }
 
-export default connect(null, {logout})(Header)
+export default connect(null, {logout, sidebarModeAC})(Header)

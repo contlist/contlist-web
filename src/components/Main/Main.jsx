@@ -3,7 +3,7 @@ import Header from '../Header/Header'
 import {connect} from 'react-redux'
 import {requestContacts, deleteContact} from '../redux/contacts-reducer'
 import Sidebar from '../Sidebar/Sidebar'
-import ContactList from '../ContactList/ContactList'
+import ContactsContainer from '../ContactList/ContactsContainer'
 import { Redirect } from 'react-router-dom'
 import './Main.css'
 
@@ -18,16 +18,14 @@ const Main = (props) => {
 			<Header />
 			<div className="app-container">
 				<Sidebar />
-				<ContactList />
+				<ContactsContainer />
 			</div>
 		</div>
 	);
 }
 
 const mapStateToProps = (state) => ({
-	contacts: state.contacts.contacts,
-	isAuth: state.auth.isAuth,
-	token: state.auth.token
+	isAuth: state.auth.isAuth
 })
 
 export default connect(mapStateToProps, {requestContacts, deleteContact})(Main)

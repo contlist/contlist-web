@@ -26,8 +26,4 @@ const ForgetPassword = (props) => {
 	</div>
 }
 
-// const mapStateToProps = (state) => ({
-//     isAuth: state.auth.isAuth
-// })
-
 export default connect(null, {login})(ForgetPassword)

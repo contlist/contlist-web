@@ -2,7 +2,7 @@ import React from 'react'
 import { login } from '../../redux/auth-reducer'
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Form } from '../../Form/Form';
 
 

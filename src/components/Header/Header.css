@@ -2,48 +2,56 @@
 
 .header {
 	width: 100%;
-	padding-left: 10px;
 	display: flex;
+	padding-left: 1rem;
 	font-size: calc(10px + 2vmin);  
 }
   
-.header div {
+.header-content {
 	display: flex;
 	align-items: center;
 }
   
 .Contacts {
+	height: 46px;
 	color: #5f6874;
 	margin: 0;
+	padding: 0;
 	font-size: inherit;
+	vertical-align: middle;
 	font-weight: 400;
 }
   
 .menu {
-	margin-right: 10px;
+	padding: 10px;
+	margin-right: 5px;
+}
+
+.menu:hover {
+	padding: 10px;
+	border-radius: 50%;
+	background-color: #eff0f3;
 }
 
 .contactsImg {
-	margin-right: 15px;
-	width: 35px;
-	height: 35px;
-	background-color: rgb(71, 84, 202);
-	border-radius: 50%;
+	margin-right: 10px;
+	width: 40px;
+	height: 40px;
 }
 
 .logout {
-	color: #5f6874;
+	margin: 0 0 0 auto;
+}
+
+.logout > button {
+	color: black; 
+	background-color: #ffffff;
 	padding: 2px 10px;
 	letter-spacing: .05rem;
 	font-size: calc(10px + 1vmin);
 	text-decoration: none;
-	border: 1px solid #dadce0;
+	border: 1px solid #e8f0fe;
 	border-radius: 5px;
-	margin-left: 900px;
-}
-
-.logout:hover {
-
 }
 
 /* === /header === */

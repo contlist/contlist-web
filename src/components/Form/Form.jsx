@@ -1,7 +1,7 @@
 import React from 'react';
 import './Form.css'
 import { Field } from 'redux-form';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export const Form = ({handleSubmit, error}, signHeader, link, linkText, linkText2, handleClick = '') => {

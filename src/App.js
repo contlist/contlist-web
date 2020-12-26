@@ -11,13 +11,7 @@ import ForgetPassword from './components/Login/ForgetPassword/ForgetPassword';
 const App = (props) => {
 	console.log(props.isAuth);
 	return <div className="App">
-		{/* {
-				(!props.isAuth) ? 
-						<Login /> :
-						<Main />
-		} */}
 		<Main />
-		{/* <Route path='/contacts' component={Main}/> */}
 		<Switch>
 			<Route path='/login' component={Login}/>
 			<Route path='/change' component={ForgetPassword}/>
