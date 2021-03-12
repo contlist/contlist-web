@@ -1,15 +1,21 @@
 import { contactsAPI } from "../API/api";
 
+// Actions
+
 const GET_CONTACTS = 'GET_CONTACTS'
 const ADD_CONTACT = 'ADD_CONTACT'
 const UPDATE_CONTACT = 'UPDATE_CONTACT'
 const DELETE_CONTACT = 'DELETE_CONTACT'
 const SIDEBAR_MODE = 'SIDEBAR_MODE'
 
+// Initial state
+
 const initialState = {
-	contacts: [{contact_name: "", phone_number: "", contactId: ""}],
+	contacts: [],
 	sidebarMode: true
 }
+
+// Reducer
 
 const ContactsReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -78,7 +84,7 @@ export const sidebarModeAC = () => ({
 	type: SIDEBAR_MODE
 })
 
-// 
+// Thunks
 
 export const addContact = (contact_name, phone_number, token) => {
 	return async (dispatch) => {

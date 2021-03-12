@@ -10,17 +10,13 @@ import ReactBar from './SearchBar/SearchBar'
 const Header = (props) => {
 	return (
 		<header className="header">
-			<div className="header-content">
-				<img src={menu} className="menu" alt="" onClick={() => {props.sidebarModeAC()}} />
-				<img src={contactsImg} alt="" className="contactsImg"/>
-				<h1 className="Contacts">Contacts</h1>
-			</div>
+			<img src={menu} className="menu" alt="" onClick={() => { props.sidebarModeAC() }} />
+			<img src={contactsImg} alt="" className="contactsImg" />
+			<h1 className="Contacts">Contacts</h1>
 			<ReactBar />
-			<div className="logout">
-				<button onClick={() => props.logout()}>Logout</button>
-			</div>
+			<button onClick={() => props.logout()} className="logout">Logout</button>
 		</header>
 	)
 }
 
-export default connect(null, {logout, sidebarModeAC})(Header)
+export default connect(null, { logout, sidebarModeAC })(Header)

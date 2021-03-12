@@ -1,6 +1,7 @@
 /* === table === */
 .contactList {
-	width: 96%;
+	width: 100%;
+	padding: 12px;
 }
 
 .tableContacts {
@@ -28,11 +29,12 @@
 
 .trContacts {
 	z-index: 0;
+	transition: .2s;
 }
 
 .trContacts:hover {
+	opacity: 1;
 	background-color: #ececee;
-	transition: .2s;
 }
 
 .tdContacts, .contactsLength {
@@ -42,6 +44,17 @@
 
 .tdContacts {
 	line-height: 1rem;
+	width: 25%;
+
+	transition: .2s;
+}
+
+.tdContacts-delete {
+	
+}
+
+.tdContacts:hover {
+	opacity: 1;
 }
 
 .contactsLength {

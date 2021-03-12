@@ -22,7 +22,8 @@ const Contacts = (props) => {
 				changeContactInfo={changeContactInfo}
 				contacts={props.contacts} 
 				form={form} 
-				deleteContact={props.deleteContact} />
+				deleteContact={props.deleteContact} 
+				token={props.token} />
 			{updateContactMode 
 				? <UpdateContact currentId={currentId} token={props.token} updateContactMode={updateContactMode} setContactMode={setContactMode} /> 
 				: null}

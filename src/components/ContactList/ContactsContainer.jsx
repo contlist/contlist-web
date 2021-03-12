@@ -18,7 +18,7 @@ class ContactsContainer extends React.Component {
 
 	render() {
 		return <>
-			<ContactList form={this.form} contacts={this.props.contacts} token={this.props.token} />
+			<ContactList form={this.form} contacts={this.props.contacts} token={this.props.token} deleteContact={this.props.deleteContact} />
 		</>
 	}
 }

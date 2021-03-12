@@ -1,12 +1,15 @@
+import { stopSubmit, SubmissionError } from "redux-form"
 import { authApi, registerAPI } from "../API/api"
 
+
+// action.types
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 const LOGOUT = 'LOGOUT'
 
 let initialState = {
 	username: null,
 	token: null,
-	isAuth: true
+	isAuth: false
 }
 
 const AuthReducer = (state = initialState, action) => {
@@ -18,10 +21,7 @@ const AuthReducer = (state = initialState, action) => {
 			}
 
 		case LOGOUT:
-			return {
-				...state,
-				initialState
-			}
+			return initialState 
 
 		default:
 			return state
@@ -38,11 +38,16 @@ export const logoutAC = () => ({
 
 export const login = (username, password) => {
 	return async (dispatch) => {
-		let response = await authApi.login(username, password)
+		try {
+			let response = await authApi.login(username, password)
 
-		if (response.status === 200) {
-			console.log(response.data)
-			dispatch(setAuthUserData(response.data.username, response.data.token, true))
+			if (response.status === 200) {
+				// set user data
+				dispatch(setAuthUserData(response.data.username, response.data.token, true))
+			}
+		} catch (error) {
+			// show error message
+			dispatch(stopSubmit('login', { _error: "Incorrect login or password" }))
 		}
 	}
 }
@@ -55,7 +60,9 @@ export const register = (username, password) => {
 }
 
 export const logout = () => {
-	return initialState
+	return async (dispatch) => {
+		dispatch(logoutAC())
+	}
 }
 
 

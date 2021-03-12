@@ -9,10 +9,6 @@ import './Main.css'
 
 
 const Main = (props) => {
-	if (!props.isAuth) {
-		return <Redirect to={"/login"} />
-	}
-	
 	return (
 		<div>
 			<Header />
@@ -25,7 +21,8 @@ const Main = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-	isAuth: state.auth.isAuth
+	// token: state.auth.token,
+	// isAuth: state.auth.isAuth
 })
 
 export default connect(mapStateToProps, {requestContacts, deleteContact})(Main)

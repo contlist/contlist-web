@@ -1,7 +1,6 @@
 .form {  
-	padding: 50px;
-	width: 25%;
-	min-width: 275px;
+	padding: 40px;
+	width: 400px;
 	margin: 0 auto;
 	border: 1px solid #dadce0;
 	border-radius: 7px;
@@ -10,14 +9,14 @@
 
 .login-title {
 	margin: 0;
-	font-size: calc(10px + 2vmin); 
+	font-size: 28px; 
 	font-weight: 500;
 }
 
 .SignIn {
 	margin-top: 20px;
 	margin-bottom: 35px;
-	font-size: calc(5px + 2vmin); 
+	font-size: 20px; 
 	font-weight: 400;
 }
 
@@ -31,18 +30,19 @@
 }
 
 .login-input {
+	font-size: .9rem;
 	padding-left: 10px;
-	margin-bottom: 25px;
+	font-weight: 400;
+	margin-bottom: 20px;
 	min-width: 250px;
 	height: 50px;
-	font-size: .9rem;
 	border: 1px solid #dadce0;
 	border-radius: 5px;
 } 
 
 .inputSubtitle {
 	margin: 0 0 .6rem .6rem;
-	font-size: 1rem;
+	font-size: 1.05rem;
 	font-weight: 400;
 }
 
@@ -69,4 +69,54 @@
 	background-color: #000;
 
 	transition: .2s;
+}
+
+.error {
+	display: flex;
+	align-items: center;
+	color: rgb(238, 5, 5);
+	font-size: 16px;
+	margin-bottom: 20px;
+	padding-left: 5px;
+}
+
+.error-image {
+	height: 17px;
+	padding-right: 10px;
+}
+
+@media(max-width: 768px) {
+	.inputSubtitle {
+		font-size: .95rem;
+	}
+
+	.login-input {
+		font-size: .85rem;
+	}
+
+	.login-title {
+		font-size: 28px; 
+	}
+
+	.SignIn {
+		font-size: 20px; 
+	}
+}
+
+@media(max-width: 492px) {
+	.inputSubtitle {
+		font-size: .95rem;
+	}
+
+	.login-input {
+		font-size: .85rem;
+	}
+
+	.login-title {
+		font-size: 28px; 
+	}
+
+	.SignIn {
+		font-size: 20px; 
+	}
 }

@@ -2,9 +2,10 @@ import React from 'react';
 import './Form.css'
 import { Field } from 'redux-form';
 import { Link } from 'react-router-dom';
+import errorImage from '../images/error.png'
 
 
-export const Form = ({handleSubmit, error}, signHeader, link, linkText, linkText2, handleClick = '') => {
+export const Form = ({ handleSubmit, error }, signHeader, link, linkText, linkText2, handleClick = '') => {
 	return (
 		<form onSubmit={handleSubmit} className="form">
 
@@ -20,14 +21,20 @@ export const Form = ({handleSubmit, error}, signHeader, link, linkText, linkText
 				<Field component="input" type="password" name="password" label="password" className="login-input" />
 			</div>
 
+			{error && <div className="error">
+				<img src={errorImage} alt="error-image" className="error-image"/>
+				<span>{error}</span>
+			</div>
+			}
+
 			<div className="login-links">
 				<Link to={link} className="link">{linkText}</Link>
-				{handleClick === '' ?   
+				{handleClick === '' ?
 					<button className="link">{linkText2}</button> :
 					<button onClick={() => handleClick()} className="link">{linkText2}</button>
-				}	
+				}
 			</div>
-			
+
 		</form>
 	)
 }
