@@ -9,7 +9,7 @@ const ForgetPasswordForm = ({handleSubmit, error}) => {
 	console.log('change')
 	return (
 		Form({handleSubmit, error}, 
-			'Change password', '/login', 'Cancel', 'Change password'
+			'Forgot password', '/forget', 'Cancel', 'New password'
 		)
 	)
 }

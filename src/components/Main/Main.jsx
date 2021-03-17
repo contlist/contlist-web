@@ -20,9 +20,6 @@ const Main = (props) => {
 	);
 }
 
-const mapStateToProps = (state) => ({
-	// token: state.auth.token,
-	// isAuth: state.auth.isAuth
-})
+const mapStateToProps = () => ({})
 
 export default connect(mapStateToProps, {requestContacts, deleteContact})(Main)

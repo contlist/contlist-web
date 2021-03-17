@@ -49,10 +49,6 @@
 	transition: .2s;
 }
 
-.tdContacts-delete {
-	
-}
-
 .tdContacts:hover {
 	opacity: 1;
 }
